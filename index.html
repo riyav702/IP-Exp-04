@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customized T-Shirt Order Form</title>
+  <script src="script.js" defer></script> <!-- Link to the external JavaScript file -->
+</head>
+<body>
+  <h2>Order Your Customized T-Shirt</h2>
+  <form id="orderForm" onsubmit="processOrder(event)">
+    
+    <fieldset>
+      <legend>T-Shirt Details</legend>
+      <label for="tagline">Tagline on the Shirt:</label>
+      <input type="text" id="tagline" name="tagline" placeholder="Enter your tagline here" required><br><br>
+
+      <label for="color">Color:</label>
+      <select id="color" name="color" required>
+        <option value="">Select a color</option>
+        <option value="white">White</option>
+        <option value="black">Black</option>
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+      </select><br><br>
+
+      <label for="size">Size:</label>
+      <select id="size" name="size" required>
+        <option value="">Select a size</option>
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+        <option value="xl">XL</option>
+        <option value="xxl">XXL</option>
+      </select><br><br>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="100" value="1" required><br><br>
+
+      <label for="delivery_date">Delivery Date:</label>
+      <input type="date" id="delivery_date" name="delivery_date" required><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Design Preferences</legend>
+      <label for="design_size">Design Size (%):</label>
+      <input type="range" id="design_size" name="design_size" min="10" max="100" value="50">
+      <output for="design_size" id="sizeValue">50</output>%<br><br>
+
+      <label for="design_upload">Upload Custom Design:</label>
+      <input type="file" id="design_upload" name="design_upload" accept=".jpg, .jpeg, .png" required><br><br>
+
+      <label for="print_type">Print Type:</label><br>
+      <input type="radio" id="digital" name="print_type" value="digital" required>
+      <label for="digital">Digital Print</label><br>
+      <input type="radio" id="screen" name="print_type" value="screen" required>
+      <label for="screen">Screen Print</label><br>
+      <input type="radio" id="handloom" name="print_type" value="handloom" required>
+      <label for="handloom">Handloom</label><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Delivery Details</legend>
+      <label for="name">Recipient's Name:</label>
+      <input type="text" id="name" name="name" placeholder="Full Name" required><br><br>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" placeholder="Street, City, State, Zip" required><br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="example@domain.com" required><br><br>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone"  placeholder="10-digit number" required><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Additional Comments</legend>
+      <label for="comments">Any additional comments or special instructions:</label><br>
+      <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter your comments here"></textarea><br><br>
+    </fieldset>
+
+    <fieldset>
+      <button type="submit">Submit Order</button>
+      <button type="reset">Reset Form</button>
+    </fieldset>
+  </form>
+
+  <div id="receipt"></div>
+</body>
+</html>
